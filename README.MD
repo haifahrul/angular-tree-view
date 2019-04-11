@@ -1,4 +1,5 @@
 Example:
+```html
 <app-tree-view
       [data]="listTreeData"
       [selectAll]="selectAll"
@@ -15,3 +16,4 @@ Example:
         <button type="button" class="btn btn-sm btn-secondary" (click)="selectAll = false">Uncheck All</button>
       </div>
     </div>
+```
