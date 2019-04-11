@@ -1,0 +1,35 @@
+ul .treeview {
+  padding-left: 16px;
+}
+
+.treeview {
+  list-style-type: none;
+  font-size: 13px;
+
+  .parent {
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+
+  span {
+    display: inline-block;
+
+    .round {
+      width: 11px;
+      height: 11px;
+      border-radius: 5px;
+      background-color: #00bfff;
+      display: inherit;
+      margin-right: 8px;
+    }
+
+    &.fa {
+      &.fa-plus-square-o,
+      &.fa-minus-square-o {
+        cursor: pointer;
+        color: #ff2b33;
+      }
+    }
+  }
+}

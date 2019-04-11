@@ -1,0 +1,35 @@
+<ul class="treeview" *ngIf="nodes.length">
+  <li *ngFor="let node of nodes">
+    <span
+      *ngIf="node[childrenAttr].length"
+      (click)="click(node)"
+      class="fa"
+      [ngClass]="{
+        'fa-minus-square-o': !node[collapseAttr],
+        'fa-plus-square-o': node[collapseAttr]
+      }"
+    >
+    </span>
+    <span (click)="click(node)" *ngIf="!node[childrenAttr].length"><i class="round"></i></span>
+
+    <!-- <input
+      type="checkbox"
+      [(ngModel)]="node[selectAttr]"
+      [indeterminate]="node[inDeterminateAttr]"
+      (change)="onModelChange(node)"
+    /> -->
+
+    <span [ngClass]="{ parent: node[childrenAttr].length }" (click)="click(node)">
+      {{ node.NAME }}
+    </span>
+
+    <app-tree-view
+      *ngIf="node[childrenAttr].length"
+      [data]="node[childrenAttr]"
+      [prepareData]="false"
+      [ngbCollapse]="node[collapseAttr]"
+      (onChange)="change($event)"
+    >
+    </app-tree-view>
+  </li>
+</ul>
